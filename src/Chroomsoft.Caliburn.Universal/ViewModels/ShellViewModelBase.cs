@@ -1,10 +1,8 @@
 ﻿using System.Threading.Tasks;
 using Caliburn.Micro;
-using Chroomsoft.Caliburn.Universal.Base;
-using Chroomsoft.Caliburn.Universal.Messages;
 using Windows.UI.Xaml.Controls;
 
-namespace Chroomsoft.Caliburn.Universal.ViewModels
+namespace Chroomsoft.Caliburn.Universal
 {
     public abstract class ShellViewModelBase : ViewModelBase, IHandle<ResumeStateMessage>, IHandle<SuspendStateMessage>, IHandle<LoadingMessage>
     {

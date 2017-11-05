@@ -1,4 +1,4 @@
-﻿namespace Chroomsoft.Caliburn.Universal.ViewModels
+﻿namespace Chroomsoft.Caliburn.Universal
 {
     public abstract class ViewModelBase<TModel> : ViewModelBase
     {

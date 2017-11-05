@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using Caliburn.Micro;
-using Chroomsoft.Caliburn.Universal.ViewModels;
 
-namespace Chroomsoft.Caliburn.Universal.Base
+namespace Chroomsoft.Caliburn.Universal
 {
     public class NavigationProvider : INavigationProvider
     {

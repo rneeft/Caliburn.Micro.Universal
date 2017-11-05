@@ -2,7 +2,7 @@
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Data;
 
-namespace Chroomsoft.Caliburn.Universal.Converters
+namespace Chroomsoft.Caliburn.Universal
 {
     public abstract class ValueConverterBase<TIn, TOut> : IValueConverter
     {

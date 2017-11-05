@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 
-namespace Chroomsoft.Caliburn.Universal.Base
+namespace Chroomsoft.Caliburn.Universal
 {
     /// <remarks>
     /// All credits for the PropertyBackingDictionary goes to: http://www.codecadwallader.com/2013/04/06/inotifypropertychanged-2-of-3-without-the-backing-fields/

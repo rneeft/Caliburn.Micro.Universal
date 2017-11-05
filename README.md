@@ -14,7 +14,7 @@ To use this library follow the following steps:
 - Add Two folder: Views, ViewModels
 - Add a class and name it <Product>Container. Replace it with the following code:
 ```csharp
-using Chroomsoft.Caliburn.Universal.Base;
+using Chroomsoft.Caliburn.Universal;
 using Example.ViewModels;
 
 namespace Example
@@ -35,7 +35,7 @@ namespace Example
 - Add a class and name it <Product>Application. Replace it with the following code:
 ```csharp
 using System;
-using Chroomsoft.Caliburn.Universal.Base;
+using Chroomsoft.Caliburn.Universal;
 using Example.ViewModels;
 
 namespace Example
@@ -49,8 +49,7 @@ namespace Example
 ```
 - Create a ShellViewModel class in the ViewModels folder and replace the code with the following:
 ```csharp
-using Chroomsoft.Caliburn.Universal.Base;
-using Chroomsoft.Caliburn.Universal.ViewModels;
+using Chroomsoft.Caliburn.Universal;
 
 namespace Example.ViewModels
 {
@@ -62,7 +61,7 @@ namespace Example.ViewModels
 ```
 - Create a MainViewModel class in the ViewModels folder and replace the code with the following:
 ```csharp
-using Chroomsoft.Caliburn.Universal.ViewModels;
+using Chroomsoft.Caliburn.Universal;
 
 namespace Example.ViewModels
 {
@@ -93,8 +92,7 @@ namespace Example.ViewModels
 ```
 - And the code behind with: 
 ```csharp
-using Chroomsoft.Caliburn.Universal.Base;
-using Chroomsoft.Caliburn.Universal.ViewModels;
+using Chroomsoft.Caliburn.Universal;
 
 namespace Example.ViewModels
 {
@@ -119,7 +117,7 @@ namespace Example.ViewModels
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:cm="using:Caliburn.Micro"
-    xmlns:c="using:Chroomsoft.Caliburn.Universal.Converters"
+    xmlns:c="using:Chroomsoft.Caliburn.Universal"
     xmlns:local="using:Example">
     <local:<Product>Application.Resources>
         <ResourceDictionary>

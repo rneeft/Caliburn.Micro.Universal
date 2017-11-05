@@ -1,7 +1,6 @@
 ﻿using Caliburn.Micro;
-using Chroomsoft.Caliburn.Universal.ViewModels;
 
-namespace Chroomsoft.Caliburn.Universal.Base
+namespace Chroomsoft.Caliburn.Universal
 {
     public interface INavigationProvider
     {

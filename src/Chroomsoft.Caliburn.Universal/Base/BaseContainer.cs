@@ -1,8 +1,7 @@
 ﻿using System;
 using Caliburn.Micro;
-using Chroomsoft.Caliburn.Universal.ViewModels;
 
-namespace Chroomsoft.Caliburn.Universal.Base
+namespace Chroomsoft.Caliburn.Universal
 {
     public abstract class BaseContainer : WinRTContainer
     {

@@ -1,4 +1,4 @@
-﻿namespace Chroomsoft.Caliburn.Universal.Messages
+﻿namespace Chroomsoft.Caliburn.Universal
 {
     public class ApplicationLoadedMessage
     {

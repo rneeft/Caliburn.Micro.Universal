@@ -1,6 +1,6 @@
 ﻿using Windows.ApplicationModel;
 
-namespace Chroomsoft.Caliburn.Universal.Messages
+namespace Chroomsoft.Caliburn.Universal
 {
     public class SuspendStateMessage
     {

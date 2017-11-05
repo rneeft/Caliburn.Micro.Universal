@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using Caliburn.Micro;
-using Chroomsoft.Caliburn.Universal.Messages;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.UI.Xaml.Controls;
 
-namespace Chroomsoft.Caliburn.Universal.Base
+namespace Chroomsoft.Caliburn.Universal
 {
     public abstract class BaseApplication : CaliburnApplication, IRegisterNavigationFrame
     {

@@ -1,8 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using Chroomsoft.Caliburn.Universal.Base;
 
-namespace Chroomsoft.Caliburn.Universal.Model
+namespace Chroomsoft.Caliburn.Universal
 {
     public abstract class ModelBase : INotifyPropertyChanged
     {

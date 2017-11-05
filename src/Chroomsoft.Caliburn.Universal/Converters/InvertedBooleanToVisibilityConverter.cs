@@ -1,6 +1,6 @@
 ﻿using Windows.UI.Xaml;
 
-namespace Chroomsoft.Caliburn.Universal.Converters
+namespace Chroomsoft.Caliburn.Universal
 {
     public class InvertedBooleanToVisibilityConverter : ValueConverterBase<bool, Visibility>
     {
