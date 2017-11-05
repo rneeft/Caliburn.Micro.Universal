@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Chroomsoft.Caliburn.Micro.Universal</id>
+    <title>Chroomsoft Caliburn Micro Universal</title>
+    <authors>Rick Neeft</authors>
+    <owners>Rick Neeft</owners>
+    <licenseUrl>https://github.com/rneeft/Caliburn.Micro.Universal/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/rneeft/Caliburn.Micro.Universal/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A base library for creating universal application with Caliburn Micro.</description>
+    <copyright>Copyright 2017</copyright>
+    <tags>Caliburn Micro Universal UWP Starter Base</tags>
+  </metadata>
+</package>
