@@ -1,10 +1,10 @@
 # Caliburn Universal Base
 A base library for creating universal application with Caliburn Micro. 
-
+![Build Status](https://chr.visualstudio.com/_apis/public/build/definitions/2d33193a-77fd-4ddc-be87-12c73bc5ff99/21/badge)
 ## How to install
 `Install-Package Chroomsoft.Caliburn.Micro.Universal`
 
-[NuGet.org](https://www.nuget.org/packages/Chroomsoft.Queries/)
+[NuGet.org](https://www.nuget.org/packages/Chroomsoft.Caliburn.Micro.Universal/)
 
 ## How to use
 
