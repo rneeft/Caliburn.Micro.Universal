@@ -5,7 +5,7 @@
     <title>Chroomsoft Caliburn Micro Universal</title>
     <authors>Rick Neeft</authors>
     <owners>Rick Neeft</owners>
-    <version>1.0-beta</version>
+    <version>$version$</version>
     <licenseUrl>https://github.com/rneeft/Caliburn.Micro.Universal/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/rneeft/Caliburn.Micro.Universal/</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
