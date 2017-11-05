@@ -17,7 +17,7 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="bin\Release\Chroomsoft.Caliburn.Universal.dll" target="runtimes\win10-x86\native"/>
+    <file src="bin\Release\Chroomsoft.Caliburn.Universal.dll" target="lib\UAP10\Chroomsoft.Caliburn.Universal.dll"/>
   </files>
   
 </package>
