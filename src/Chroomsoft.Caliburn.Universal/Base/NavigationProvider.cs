@@ -11,12 +11,8 @@ namespace Chroomsoft.Caliburn.Universal
 
         public INavigationService NavigationService
         {
-            private get { return navigationService; }
-            set
-            {
-                navigationService = value;
-                ExecuteNavigationServiceCommands();
-            }
+            get { return navigationService; }
+            private set { navigationService = value; }
         }
 
         public Type FirstViewModel { get; set; }

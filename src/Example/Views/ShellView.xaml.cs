@@ -1,4 +1,4 @@
-﻿using Chroomsoft.Caliburn.Universal.ViewModels;
+﻿using Chroomsoft.Caliburn.Universal;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 

@@ -15,5 +15,7 @@ namespace Chroomsoft.Caliburn.Universal
         void SuspendNavigationServiceState();
 
         void GoBack();
+
+        INavigationService NavigationService { get; }
     }
 }

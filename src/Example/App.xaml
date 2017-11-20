@@ -3,7 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:cm="using:Caliburn.Micro"
-    xmlns:c="using:Chroomsoft.Caliburn.Universal.Converters"
+    xmlns:c="using:Chroomsoft.Caliburn.Universal"
     xmlns:local="using:Example">
     <local:ExampleApplication.Resources>
         <ResourceDictionary>

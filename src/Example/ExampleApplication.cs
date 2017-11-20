@@ -1,5 +1,5 @@
 ﻿using System;
-using Chroomsoft.Caliburn.Universal.Base;
+using Chroomsoft.Caliburn.Universal;
 using Example.ViewModels;
 
 namespace Example

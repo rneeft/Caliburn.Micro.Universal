@@ -1,4 +1,4 @@
-﻿using Chroomsoft.Caliburn.Universal.ViewModels;
+﻿using Chroomsoft.Caliburn.Universal;
 
 namespace Example.ViewModels
 {
