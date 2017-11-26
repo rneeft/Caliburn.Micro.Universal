@@ -1,4 +1,4 @@
-﻿namespace Chroomsoft.Caliburn.Universal.Converters
+﻿namespace Chroomsoft.Caliburn.Universal
 {
     public class StringFormatConverter : ValueConverterBase<object, string, string>
     {
