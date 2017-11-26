@@ -109,6 +109,10 @@
     <Compile Include="Base\BaseContainer.cs" />
     <Compile Include="Base\INavigationProvider.cs" />
     <Compile Include="Base\IRegisterNavigationFrame.cs" />
+    <Compile Include="Converters\NullToCollapsedConverter.cs" />
+    <Compile Include="Converters\NullToVisibleConverter.cs" />
+    <Compile Include="Converters\StringFormatConverter.cs" />
+    <Compile Include="Converters\ValueConverterBaseParam.cs" />
     <Compile Include="Model\ModelBase.cs" />
     <Compile Include="Base\NavigationProvider.cs" />
     <Compile Include="Base\NotifiesOnAttribute.cs" />
