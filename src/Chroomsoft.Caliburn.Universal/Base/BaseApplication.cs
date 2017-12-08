@@ -10,9 +10,9 @@ namespace Chroomsoft.Caliburn.Universal
 {
     public abstract class BaseApplication : CaliburnApplication, IRegisterNavigationFrame
     {
-        private BaseContainer container;
         private Frame rootFrame;
         private LaunchActivatedEventArgs args;
+        protected BaseContainer container;
 
         public static IEventAggregator EventAggregator { get; private set; }
         public static INavigationProvider NavigationProvider { get; private set; }
