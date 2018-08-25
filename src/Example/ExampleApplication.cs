@@ -1,12 +1,9 @@
-﻿using System;
-using Chroomsoft.Caliburn.Universal;
+﻿using Chroomsoft.Caliburn.Universal;
 using Example.ViewModels;
 
 namespace Example
 {
-    public class ExampleApplication : BaseApplication
+    public class ExampleApplication : BaseApplication<AppContainer, ShellViewModel>
     {
-        protected override BaseContainer CreateContainer() => new AppContainer();
-        protected override Type ShellViewModelType() => typeof(ShellViewModel);
     }
 }

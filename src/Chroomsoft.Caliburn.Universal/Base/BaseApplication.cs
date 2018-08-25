@@ -10,10 +10,9 @@ namespace Chroomsoft.Caliburn.Universal
 {
     public abstract class BaseApplication : CaliburnApplication, IRegisterNavigationFrame
     {
+        protected BaseContainer container;
         private Frame rootFrame;
         private LaunchActivatedEventArgs args;
-        protected BaseContainer container;
-
         public static IEventAggregator EventAggregator { get; private set; }
         public static INavigationProvider NavigationProvider { get; private set; }
 
@@ -38,20 +37,9 @@ namespace Chroomsoft.Caliburn.Universal
             return container.RegisterNavigationService(frame);
         }
 
-        private void InitializeContainer()
+        public TService GetInstance<TService>(string key = null) where TService : class
         {
-            container = CreateContainer();
-            container.Initialize(this);
-
-            EventAggregator = container.GetInstance<IEventAggregator>();
-            NavigationProvider = container.GetInstance<INavigationProvider>();
-            EventAggregator.Subscribe(this);
-
-            container.RegisterApplicationComponents();
-            container.RegisterShellViewModelAsSingleton(ShellViewModelType());
-            container.RegisterOtherViewModels();
-
-            Debug.WriteLine("0. InitializeContainer DONE");
+            return container.GetInstance<TService>(key);
         }
 
         protected override void OnLaunched(LaunchActivatedEventArgs args)
@@ -69,12 +57,11 @@ namespace Chroomsoft.Caliburn.Universal
         }
 
         protected abstract Type ShellViewModelType();
-        protected abstract BaseContainer CreateContainer();
-        protected virtual void RegisterSpecialValues() { }
 
-        private void HandoffShellView()
+        protected abstract BaseContainer CreateContainer();
+
+        protected virtual void RegisterSpecialValues()
         {
-            DisplayRootViewFor(ShellViewModelType());
         }
 
         protected void RegisterEventHandlerFor<T>(string key)
@@ -83,17 +70,12 @@ namespace Chroomsoft.Caliburn.Universal
                 MessageBinder.SpecialValues.Add(key, x => (T)((ItemClickEventArgs)x.EventArgs).ClickedItem);
         }
 
-        private void BroadcastResumeStateMessageIfNeeded(ApplicationExecutionState previousExecutionState)
-        {
-            if (previousExecutionState == ApplicationExecutionState.Terminated)
-                EventAggregator.PublishOnUIThread(new ResumeStateMessage());
-        }
-
         protected override void OnSuspending(object sender, SuspendingEventArgs e)
         {
             EventAggregator.PublishOnUIThread(new SuspendStateMessage(e.SuspendingOperation));
         }
 
+        [Obsolete("Please make use of GetInstance<TService>(string key)")]
         protected override object GetInstance(Type service, string key)
         {
             return container.GetInstance(service, key);
@@ -107,6 +89,33 @@ namespace Chroomsoft.Caliburn.Universal
         protected override void BuildUp(object instance)
         {
             container.BuildUp(instance);
+        }
+
+        private void InitializeContainer()
+        {
+            container = CreateContainer();
+            container.Initialize(this);
+
+            EventAggregator = container.GetInstance<IEventAggregator>();
+            NavigationProvider = container.GetInstance<INavigationProvider>();
+            EventAggregator.Subscribe(this);
+
+            container.RegisterApplicationComponents();
+            container.RegisterShellViewModelAsSingleton(ShellViewModelType());
+            container.RegisterOtherViewModels();
+
+            Debug.WriteLine("0. InitializeContainer DONE");
+        }
+
+        private void HandoffShellView()
+        {
+            DisplayRootViewFor(ShellViewModelType());
+        }
+
+        private void BroadcastResumeStateMessageIfNeeded(ApplicationExecutionState previousExecutionState)
+        {
+            if (previousExecutionState == ApplicationExecutionState.Terminated)
+                EventAggregator.PublishOnUIThread(new ResumeStateMessage());
         }
     }
 }
