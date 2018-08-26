@@ -114,6 +114,7 @@
     <Compile Include="Converters\NullToCollapsedConverter.cs" />
     <Compile Include="Converters\NullToVisibleConverter.cs" />
     <Compile Include="Converters\StringFormatConverter.cs" />
+    <Compile Include="Converters\ToggleVisibilityConverter.cs" />
     <Compile Include="Converters\ValueConverterBaseParam.cs" />
     <Compile Include="Data\ObservableList.cs" />
     <Compile Include="Model\ModelBase.cs" />

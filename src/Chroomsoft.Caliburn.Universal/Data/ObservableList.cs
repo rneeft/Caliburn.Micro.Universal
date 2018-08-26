@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Specialized;
 
-namespace Chroomsoft.Caliburn.Universal.Data
+namespace Chroomsoft.Caliburn.Universal
 {
     /// <summary> List with observable items that changed as a whole instead of item based. For Item
     /// based observable list use the <see

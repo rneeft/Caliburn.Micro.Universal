@@ -1,7 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using System.Linq;
 
-namespace Chroomsoft.Caliburn.Universal.Base
+namespace Chroomsoft.Caliburn.Universal
 {
     public class GroupedCollection<TKey, TItem> : ObservableCollection<TItem>
     {
