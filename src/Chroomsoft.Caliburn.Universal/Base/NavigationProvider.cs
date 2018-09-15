@@ -6,14 +6,15 @@ namespace Chroomsoft.Caliburn.Universal
 {
     public class NavigationProvider : INavigationProvider
     {
-        private INavigationService navigationService;
         private readonly List<System.Action> beforeNavigationActiveActions = new List<System.Action>();
+        private readonly IEventAggregator eventAggregator;
 
-        public INavigationService NavigationService
+        public NavigationProvider(IEventAggregator eventAggregator)
         {
-            get { return navigationService; }
-            private set { navigationService = value; }
+            this.eventAggregator = eventAggregator;
         }
+
+        public INavigationService NavigationService { get; private set; }
 
         public Type FirstViewModel { get; set; }
 
@@ -22,22 +23,27 @@ namespace Chroomsoft.Caliburn.Universal
             ExecuteNavigationWhenServiceIsActive(() =>
             {
                 if (IsActiveScreenTypeOf<TViewModel>())
-                    return;
+                {
+                    if (parameter != null)
+                        eventAggregator.PublishOnUIThread(new ViewModelParameterChangedMessage(parameter));
+                }
+                else
+                {
+                    NavigateToScreen<TViewModel>(parameter);
 
-                NavigateToScreen<TViewModel>(parameter);
-
-                if (NavigatedToFirstViewModel<TViewModel>())
-                    navigationService.BackStack.Clear();
+                    if (NavigatedToFirstViewModel<TViewModel>())
+                        NavigationService.BackStack.Clear();
+                }
             });
         }
 
         public bool IsActiveScreenTypeOf<TViewModel>() where TViewModel : Screen
         {
-            if (navigationService.CurrentSourcePageType == null)
+            if (NavigationService.CurrentSourcePageType == null)
                 return false;
 
-            var newView = typeof(TViewModel).FullName.Replace("Model", "");
-            var currentView = navigationService.CurrentSourcePageType.FullName;
+            var newView = typeof(TViewModel).FullName.Replace("Model", string.Empty);
+            var currentView = NavigationService.CurrentSourcePageType.FullName;
 
             return newView == currentView;
         }
@@ -57,18 +63,18 @@ namespace Chroomsoft.Caliburn.Universal
             NavigationService.GoBack();
         }
 
+        public void SetNavigationService(INavigationService service)
+        {
+            NavigationService = service;
+            ExecuteNavigationServiceCommands();
+        }
+
         private void ExecuteNavigationServiceCommands()
         {
             foreach (var command in beforeNavigationActiveActions)
                 command();
 
             beforeNavigationActiveActions.Clear();
-        }
-
-        public void SetNavigationService(INavigationService service)
-        {
-            navigationService = service;
-            ExecuteNavigationServiceCommands();
         }
 
         private bool NavigatedToFirstViewModel<TViewModel>() where TViewModel : ViewModelBase

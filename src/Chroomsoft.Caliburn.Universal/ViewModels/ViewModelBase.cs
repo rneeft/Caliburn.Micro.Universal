@@ -30,12 +30,10 @@ namespace Chroomsoft.Caliburn.Universal
             EventAggregator.Subscribe(this);
         }
 
-        private async void ViewModelBasePropertyChanged(object sender, PropertyChangedEventArgs e)
+        protected virtual Task OnProperyChangedAsync(string propertyName)
         {
-            await OnProperyChangedAsync(e.PropertyName);
+            return Task.FromResult(0);
         }
-
-        protected virtual Task OnProperyChangedAsync(string propertyName) { return Task.FromResult(0); }
 
         protected override void OnDeactivate(bool close)
         {
@@ -45,6 +43,12 @@ namespace Chroomsoft.Caliburn.Universal
         }
 
         protected T GetPropertyValue<T>([CallerMemberName] string propertyName = null) => propertyHelper.GetPropertyValue<T>(propertyName);
+
         protected bool SetPropertyValue<T>(T newValue, [CallerMemberName] string propertyName = null) => propertyHelper.SetPropertyValue(newValue, propertyName);
+
+        private async void ViewModelBasePropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            await OnProperyChangedAsync(e.PropertyName);
+        }
     }
 }

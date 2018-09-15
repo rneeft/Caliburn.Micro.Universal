@@ -4,6 +4,8 @@ namespace Chroomsoft.Caliburn.Universal
 {
     public interface INavigationProvider
     {
+        INavigationService NavigationService { get; }
+
         void SetNavigationService(INavigationService service);
 
         void NavigateTo<TViewModel>(object parameter = null) where TViewModel : ViewModelBase;
@@ -15,7 +17,5 @@ namespace Chroomsoft.Caliburn.Universal
         void SuspendNavigationServiceState();
 
         void GoBack();
-
-        INavigationService NavigationService { get; }
     }
 }

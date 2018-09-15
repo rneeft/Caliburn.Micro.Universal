@@ -11,9 +11,11 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Button x:Name="ShowMain" Content="Show MainView" HorizontalAlignment="Center" />
+        <StackPanel Orientation="Horizontal">
+            <Button x:Name="ShowMain" Content="Show MainView" HorizontalAlignment="Center" />
+            <TextBox Text="{Binding Path=SearchQuery, Mode=TwoWay}" Margin="10,0" Width="200" />
+            <Button x:Name="Search" Content="Show Search in ViewModel" />
+        </StackPanel>
         <Frame x:Name="frame" Loaded="OnFrameLoaded" DataContext="{x:Null}" Grid.Row="1" />
     </Grid>
 </Page>
-
-    

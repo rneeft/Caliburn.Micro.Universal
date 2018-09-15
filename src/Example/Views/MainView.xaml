@@ -7,7 +7,14 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="Red">
-
+    <Grid>
+        <StackPanel Width="250" HorizontalAlignment="Left">
+            <TextBlock Text="First name" />
+            <TextBox Text="{Binding Path=FirstName, Mode=TwoWay}" />
+            <TextBlock Text="Last name" Margin="0,5,0,0" />
+            <TextBox Text="{Binding Path=LastName, Mode=TwoWay}" />
+            <TextBlock Text="{Binding Path=FullName, Converter={StaticResource StringFormatConverter}, ConverterParameter='Your full name is: {0}'}"
+                       Margin="0,5" />
+        </StackPanel>
     </Grid>
 </Page>

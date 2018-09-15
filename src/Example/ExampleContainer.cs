@@ -12,6 +12,7 @@ namespace Example
         public override void RegisterOtherViewModels()
         {
             this.RegisterViewModel<MainViewModel>();
+            this.RegisterViewModel<SearchViewModel>();
         }
     }
 }

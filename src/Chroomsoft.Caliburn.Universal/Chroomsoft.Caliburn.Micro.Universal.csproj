@@ -106,7 +106,7 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Base\BaseApplicationOf.cs" />
+    <Compile Include="Base\BaseApplication.cs" />
     <Compile Include="Base\BaseContainer.cs" />
     <Compile Include="Base\INavigationProvider.cs" />
     <Compile Include="Base\IRegisterNavigationFrame.cs" />
@@ -117,11 +117,12 @@
     <Compile Include="Converters\ToggleVisibilityConverter.cs" />
     <Compile Include="Converters\ValueConverterBaseParam.cs" />
     <Compile Include="Data\ObservableList.cs" />
+    <Compile Include="Messages\ViewModelParameterChangedMessage.cs" />
     <Compile Include="Model\ModelBase.cs" />
     <Compile Include="Base\NavigationProvider.cs" />
     <Compile Include="Base\NotifiesOnAttribute.cs" />
     <Compile Include="Base\PropertyHelper.cs" />
-    <Compile Include="Base\BaseApplication.cs" />
+    <Compile Include="Base\BaseApplicationOf.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="ViewModels\ViewModelBaseOfT.cs" />
     <Compile Include="Converters\InvertedBooleanToVisibilityConverter.cs" />

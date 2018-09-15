@@ -42,6 +42,11 @@ namespace Chroomsoft.Caliburn.Universal
             return container.GetInstance<TService>(key);
         }
 
+        protected override object GetInstance(Type service, string key)
+        {
+            return container.GetInstance(service, key);
+        }
+
         protected override void OnLaunched(LaunchActivatedEventArgs args)
         {
             this.args = args;
@@ -73,12 +78,6 @@ namespace Chroomsoft.Caliburn.Universal
         protected override void OnSuspending(object sender, SuspendingEventArgs e)
         {
             EventAggregator.PublishOnUIThread(new SuspendStateMessage(e.SuspendingOperation));
-        }
-
-        [Obsolete("Please make use of GetInstance<TService>(string key)")]
-        protected override object GetInstance(Type service, string key)
-        {
-            return container.GetInstance(service, key);
         }
 
         protected override IEnumerable<object> GetAllInstances(Type service)

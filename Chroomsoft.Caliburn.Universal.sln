@@ -8,6 +8,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{7B0B8784-A5E5-404C-921B-ABFE06A358B2}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
+		releases.md = releases.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example", "src\Example\Example.csproj", "{57F4C865-59D9-4925-B1BC-A0CEBFAA172B}"

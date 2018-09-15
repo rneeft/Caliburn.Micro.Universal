@@ -9,6 +9,7 @@
         <ResourceDictionary>
             <cm:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
             <c:InvertedBooleanToVisibilityConverter x:Key="InvertedBooleanToVisibilityConverter" />
+            <c:StringFormatConverter x:Key="StringFormatConverter" />
         </ResourceDictionary>
-        </local:ExampleApplication.Resources>
+    </local:ExampleApplication.Resources>
 </local:ExampleApplication>

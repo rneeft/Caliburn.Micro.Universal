@@ -1,0 +1,21 @@
+﻿<Page
+    x:Class="Example.Views.SearchView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Example.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <StackPanel HorizontalAlignment="Center">
+        <TextBlock FontSize="250" Text="{Binding Path=SearchQuery}" />
+        <ListView x:Name="History" HorizontalAlignment="Center">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding}" FontSize="50" HorizontalAlignment="Center" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackPanel>
+</Page>
