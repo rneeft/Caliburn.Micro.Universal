@@ -42,6 +42,12 @@ namespace Chroomsoft.Caliburn.Universal
             return container.GetInstance<TService>(key);
         }
 
+        protected override void Configure()
+        {
+            Debug.WriteLine("0. InitializeContainer");
+            InitializeContainer();
+        }
+
         protected override object GetInstance(Type service, string key)
         {
             return container.GetInstance(service, key);
@@ -51,8 +57,8 @@ namespace Chroomsoft.Caliburn.Universal
         {
             this.args = args;
 
-            Debug.WriteLine("0. InitializeContainer");
-            InitializeContainer();
+            if (args.PreviousExecutionState == ApplicationExecutionState.Running)
+                return;
 
             Debug.WriteLine("1. RegisterSpecialValues");
             RegisterSpecialValues();
